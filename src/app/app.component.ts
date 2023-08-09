@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 
 @Component({
@@ -8,8 +8,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent implements OnInit {
   /* #1 View MOdel (VM) implementation */
-  public vm: MockViewModel =
+  // TODO: add mock view model and models Dir with division by domain..
+  // public vm: MockViewModel =
   title = 'angular-in-app-styleguide';
+
+  public ngOnInit() {
+    // TODO: add mock UP of View model
+  }
 }
 
 
