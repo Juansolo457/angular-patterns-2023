@@ -3,5 +3,4 @@ export interface MockViewModel {
   guid: string;
   isActive: boolean;
   ordinal: number;
-
 }

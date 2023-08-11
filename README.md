@@ -1,15 +1,16 @@
-# Description 
-this is a collection of the angular patterns I've used on different projects. 
-This chould be viewable from the app with reusable componetns that can be reused 
+# Description
+
+this is a collection of the angular patterns I've used on different projects.
+This is intended to be accessible from the app with reusable components that can be injected 
 anywhere app wide
 
-# Summary 
-- Ui components 
-- design patterns 
-- service implementation 
-- component hierachy 
-- 
+# Summary
 
+- Ui components
+- design patterns
+- service implementation
+- component hierachy
+-
 
 # AngularInAppStyleguide
 

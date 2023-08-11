@@ -17,49 +17,14 @@
     "forceConsistentCasingInFileNames": true,
     "importHelpers": true,
     "incremental": true,
-    "lib": [
-      "es2018",
-      "dom",
-      "esnext.asynciterable"
-    ],
-    "module": "es2020",
+    "lib": ["ES2022", "dom"],
+    "module": "ES2022",
     "moduleResolution": "node",
     "noFallthroughCasesInSwitch": true,
+    "noImplicitAny": false,
     "noImplicitReturns": true,
-    "noStrictGenericChecks": true,
+    "noPropertyAccessFromIndexSignature": true,
     "outDir": "./dist/out-tsc",
-    "paths": {
-      "*": [
-        "src/*"
-      ],
-      "app/*": [
-        "src/app/*"
-      ],
-      "environments/*": [
-        "src/environments/*"
-      ],
-      "lib/*": [
-        "src/lib/*"
-      ],
-      "core-js/es7/reflect": [
-        "node_modules/core-js/proposals/reflect-metadata"
-      ],
-      "core-js/es6/*": [
-        "node_modules/core-js/es"
-      ],
-      "core-js/es7/*": [
-        "node_modules/core-js/es"
-      ],
-      "time-input-polyfill/auto*": [
-        "node_modules/core-js/es"
-      ],
-      "crypto": [
-        "node_modules/crypto-browserify"
-      ],
-      "stream": [
-        "node_modules/stream-browserify"
-      ]
-    },
     "removeComments": true,
     "resolveJsonModule": true,
     "sourceMap": true,
@@ -67,15 +32,10 @@
     "strictFunctionTypes": true,
     "strictNullChecks": false,
     "strictPropertyInitialization": false,
-    "target": "es2015",
-    "types": [
-      "googlemaps",
-      "jest",
-      "node"
-    ],
-    "typeRoots": [
-      "node_modules/@types"
-    ]
+    "target": "ES2022",
+    "types": ["jest", "node"],
+    "typeRoots": ["node_modules/@types"]
   },
+  "useDefineForClassFields": false,
   "exclude": ["**/node_modules", "**/.*/"]
 }

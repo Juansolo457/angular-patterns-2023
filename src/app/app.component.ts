@@ -1,30 +1,28 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { MockViewModel } from './models/mock-models/mock-view-model';
-
+import { TypescriptCongifClass } from './models/mock-models/typescript-config.model';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
 })
-export class AppComponent implements OnInit {
-  // todo: check this not correct
-  public vm: MockViewModel = {} as MockViewModel
-
-  /* #1 View MOdel (VM) implementation */
-  // TODO: add mock view model and models Dir with division by domain..
-  // public vm: MockViewModel =
-  title = 'angular-in-app-styleguide';
-
-  constructor() {}
+export class AppComponent implements OnInit, OnDestroy {
+  public vm: MockViewModel;
 
   public ngOnInit() {
+    const typescriptMockClass: TypescriptCongifClass = new TypescriptCongifClass()
+    console.log('ts mock class log foo value', typescriptMockClass['foo']);
     this.vm = {
       name: 'John',
       guid: '123-456-8DDD',
       isActive: true,
-      ordinal: 12
-    }
+      ordinal: 12,
+    };
+  }
+
+  public ngOnDestroy() {
+    console.log('ng on dis');
+    console.log('ng on dis');
   }
 }
-
