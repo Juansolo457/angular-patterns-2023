@@ -9,6 +9,7 @@ import { TypescriptCongifClass } from './models/mock-models/typescript-config.mo
 })
 export class AppComponent implements OnInit, OnDestroy {
   public vm: MockViewModel;
+  public title = 'angular-in-app-styleguide';
 
   public ngOnInit() {
     const typescriptMockClass: TypescriptCongifClass = new TypescriptCongifClass();
