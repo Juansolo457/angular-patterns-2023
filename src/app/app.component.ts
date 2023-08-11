@@ -11,7 +11,7 @@ export class AppComponent implements OnInit, OnDestroy {
   public vm: MockViewModel;
 
   public ngOnInit() {
-    const typescriptMockClass: TypescriptCongifClass = new TypescriptCongifClass()
+    const typescriptMockClass: TypescriptCongifClass = new TypescriptCongifClass();
     console.log('ts mock class log foo value', typescriptMockClass['foo']);
     this.vm = {
       name: 'John',
@@ -20,6 +20,8 @@ export class AppComponent implements OnInit, OnDestroy {
       ordinal: 12,
     };
   }
+
+  public blah(): void {}
 
   public ngOnDestroy() {
     console.log('ng on dis');

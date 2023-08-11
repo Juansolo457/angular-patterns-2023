@@ -1,5 +1,5 @@
 /* NOTE: As of 08/2023 - This is the recommended way to define properties
-* on a class using typescript. */
+ * on a class using typescript. */
 
 export class TypescriptCongifClass {
   constructor() {
