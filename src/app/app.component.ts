@@ -21,11 +21,5 @@ export class AppComponent implements OnInit, OnDestroy {
       ordinal: 12,
     };
   }
-
-  public blah(): void {}
-
-  public ngOnDestroy() {
-    console.log('ng on dis');
-    console.log('ng on dis');
-  }
+  public ngOnDestroy() {}
 }

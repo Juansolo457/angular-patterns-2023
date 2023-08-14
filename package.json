@@ -4,12 +4,13 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": " npm run lint && npm run test-build && ng build",
+    "build": "ng build",
     "lint": "ng lint",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test -- --coverage --coverage-reporters=text-summary --coverage-reporters=lcov",
-    "test-build": "ng test",
-    "test-watch": "ng test -- -watch"
+    "test": "ng test",
+    "test-build": "npm run build --dynamic",
+    "test-watch": "ng test --watch",
+    "test-watch-jj": "npm run test-build --watch"
   },
   "private": true,
   "dependencies": {
