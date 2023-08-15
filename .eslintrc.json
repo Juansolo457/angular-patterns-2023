@@ -1,14 +1,208 @@
 {
   "root": true,
   "ignorePatterns": [
-    "projects/**/*"
+    "dist",
+    "coverage",
+    "src/**/*.test.ts",
+    "src/frontend/generated/*"
   ],
   "overrides": [
     {
       "files": [
         "*.ts"
       ],
-      "extends": [  "plugin:prettier/recommended",  "plugin:@angular-eslint/template/recommended"],
+      "parserOptions": {
+        "project": [
+          "tsconfig.app.json",
+          "tsconfig.spec.json"
+        ],
+        "createDefaultProgram": true
+      },
+      "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended"
+      ],
+      "plugins": [
+        "eslint-plugin-no-null",
+        "unicorn"
+      ],
+      "rules": {
+        "@typescript-eslint/await-thenable": "error",
+        "@typescript-eslint/ban-types": "off",
+        "@typescript-eslint/explicit-member-accessibility": [
+          "error",
+          {
+            "accessibility": "explicit",
+            "overrides": {
+              "accessors": "explicit",
+              "constructors": "explicit",
+              "parameterProperties": "explicit"
+            }
+          }
+        ],
+        "@typescript-eslint/member-delimiter-style": [
+          "error",
+          {
+            "multiline": {
+              "delimiter": "semi",
+              "requireLast": true
+            },
+            "singleline": {
+              "delimiter": "semi",
+              "requireLast": false
+            }
+          }
+        ],
+        "@typescript-eslint/member-ordering": [
+          "error",
+          {
+            "default": {
+              "memberTypes": [
+                "signature",
+                "public-field",
+                "protected-field",
+                "private-field",
+                "constructor",
+                "method"
+              ]
+            },
+            "interfaces": {
+              "memberTypes": [
+                "signature",
+                "field",
+                "constructor",
+                "method"
+              ],
+              "order": "alphabetically"
+            }
+          }
+        ],
+        "@typescript-eslint/method-signature-style": "error",
+        "@typescript-eslint/naming-convention": [
+          "error",
+          {
+            "selector": ["enumMember"],
+            "format": ["StrictPascalCase"]
+          }
+        ],
+        "@typescript-eslint/no-empty-function": "error",
+        "@typescript-eslint/no-explicit-any": "error",
+        "@typescript-eslint/no-inferrable-types": ["off"],
+        "@typescript-eslint/no-require-imports": "error",
+        "@typescript-eslint/no-this-alias": "error",
+        "@typescript-eslint/no-unused-expressions": [
+          "error",
+          {
+            "allowShortCircuit": true
+          }
+        ],
+        "@typescript-eslint/no-var-requires": "error",
+        "@typescript-eslint/quotes": [
+          "error",
+          "single",
+          {
+            "avoidEscape": true
+          }
+        ],
+        "@typescript-eslint/semi": ["error"],
+        "@typescript-eslint/typedef": [
+          "error",
+          {
+            "arrowParameter": true,
+            "memberVariableDeclaration": true,
+            "parameter": true,
+            "propertyDeclaration": true,
+            "variableDeclaration": true
+          }
+        ],
+        "arrow-body-style": ["error", "as-needed"],
+        "arrow-parens": [
+          "error",
+          "always"
+        ],
+        "brace-style": [
+          "error",
+          "1tbs"
+        ],
+        "comma-dangle": "error",
+        "default-case": "error",
+        "eqeqeq": [
+          "error",
+          "always"
+        ],
+        "import/no-default-export": "off",
+        "max-classes-per-file": [
+          "error",
+          1
+        ],
+        "max-len": [
+          "error",
+          {
+            "code": 120
+          }
+        ],
+        "max-lines": [
+          "warn",
+          500
+        ],
+        "no-console": [
+          "error",
+          {
+            "allow": [""]
+          }
+        ],
+        "no-duplicate-imports": "error",
+        "no-empty": [
+          "error",
+          {
+            "allowEmptyCatch": true
+          }
+        ],
+        "no-floating-decimal": "error",
+        "no-invalid-this": "error",
+        "no-irregular-whitespace": "error",
+        "no-multiple-empty-lines": [
+          "error",
+          {
+            "max": 2
+          }
+        ],
+        "no-null/no-null": "error",
+        "no-redeclare": "error",
+        "no-underscore-dangle": ["error", { "allowAfterThis": true }],
+        "padding-line-between-statements": [
+          "off",
+          {
+            "blankLine": "always",
+            "prev": "*",
+            "next": "return"
+          }
+        ],
+        "prefer-arrow/prefer-arrow-functions": "off",
+        "prefer-template": "error",
+        "semi": "off",
+        "sort-imports": [
+          "error",
+          {
+            "allowSeparatedGroups": false,
+            "ignoreCase": true,
+            "ignoreDeclarationSort": true,
+            "ignoreMemberSort": false
+          }
+        ],
+        "sort-keys": ["error", "asc", {"caseSensitive": false}],
+        "sort-vars": "error",
+        "space-in-parens": ["error", "never"],
+        "unicode-bom": ["error", "never"],
+        "unicorn/prefer-switch": "error",
+        "yoda": "error"
+      }
+    },
+    {
+      "files": [
+        "*.ts"
+      ],
+      "extends": [  "plugin:prettier/recommended"],
       "parserOptions": {
         "sourceType": "module",
         "ecmaVersion": "latest",
@@ -25,7 +219,9 @@
     {
       "files": ["*.html"],
       "extends": ["plugin:@angular-eslint/template/recommended"],
-      "rules": {}
+      "rules": {
+        "comma-dangle": "off"
+      }
     },
     // NOTE: WE ARE NOT APPLYING @ANGULAR-ESLINT/TEMPLATE IN THIS OVERRIDE, ONLY PRETTIER
     {
