@@ -9,8 +9,6 @@ export class MockPatternService {
   private mockSubjectPatternExample$: BehaviorSubject<MockViewModel> = new BehaviorSubject<MockViewModel>(undefined);
   private _mockPrimitiveNumber: boolean;
 
-  constructor() {}
-
   public get getMockPatternExample(): BehaviorSubject<MockViewModel> {
     return this.mockSubjectPatternExample$;
   }

@@ -2,18 +2,18 @@
  * on a class using typescript. */
 
 export class TypescriptCongifClass {
-  constructor() {
+  public constructor() {
     Object.defineProperty(this, 'foo', {
-      enumerable: true,
       configurable: true,
-      writable: true,
+      enumerable: true,
       value: 100,
+      writable: true,
     });
     Object.defineProperty(this, 'bar', {
-      enumerable: true,
       configurable: true,
-      writable: true,
+      enumerable: true,
       value: void 0,
+      writable: true,
     });
   }
 }

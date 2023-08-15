@@ -1,32 +1,25 @@
-import { TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {
   beforeEach(() =>
     TestBed.configureTestingModule({
-      imports: [RouterTestingModule],
       declarations: [AppComponent],
+      imports: [RouterTestingModule],
     })
   );
 
   it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app).toBeDefined();
+    const fixture: ComponentFixture<AppComponent> = TestBed.createComponent(AppComponent);
+    const app: AppComponent = fixture.componentInstance;
+    expect(app).toBeTruthy();
   });
-
-  it(`should have as title 'angular-in-app-styleguide'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('angular-in-app-styleguide');
-  });
-
   describe('ngOnInit', (): void => {
     it('should initialize the component', () => {
       // Arrange
-      const fixture = TestBed.createComponent(AppComponent);
-      const app = fixture.componentInstance;
+      const fixture: ComponentFixture<AppComponent> = TestBed.createComponent(AppComponent);
+      const app: AppComponent = fixture.componentInstance;
       app.vm = undefined;
 
       // Act
@@ -34,9 +27,10 @@ describe('AppComponent', () => {
 
       // Assert
       expect(app.vm).toEqual({
-        name: 'John',
+        formGroup: undefined,
         guid: '123-456-8DDD',
         isActive: true,
+        name: 'John',
         ordinal: 12,
       });
     });

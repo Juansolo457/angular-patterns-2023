@@ -1,53 +1,52 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Subject } from 'rxjs';
 import { MockViewModel } from './models/mock-models/mock-view-model';
-import { TypescriptCongifClass } from './models/mock-models/typescript-config.model';
 import { MockPatternService } from './shared/mock-pattern.service';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
+  templateUrl: './app.component.html',
 })
-export class AppComponent implements OnInit, OnDestroy {
+export class AppComponent implements OnDestroy, OnInit {
   public vm: MockViewModel;
-  public title = 'angular-in-app-styleguide';
-
-  constructor(private mockPatternService: MockPatternService) {}
+  public unsubscribe$: Subject<void>;
+  public constructor(private mockPatternService: MockPatternService) {
+    this.unsubscribe$ = new Subject<void>();
+  }
 
   public ngOnInit() {
-    const typescriptMockClass: TypescriptCongifClass = new TypescriptCongifClass();
-    console.log('ts mock class log foo value', typescriptMockClass['foo']);
     this.vm = {
-      name: 'John',
+      formGroup: undefined,
       guid: '123-456-8DDD',
       isActive: true,
+      name: 'John',
       ordinal: 12,
-      formGroup: undefined,
     };
 
     this.handleSetMockServiceSubjectValue();
     this.handleSetMockPrimitiveValue();
     this.createFormGroup();
   }
-
-  public ngOnDestroy() {}
+  public ngOnDestroy(): void {
+    this.unsubscribe$.next(undefined);
+    this.unsubscribe$.complete();
+  }
 
   public createFormGroup(): void {
-    this.vm.formGroup;
+    // TODO: Implement Form group pattern.
+    // this.vm.formGroup = new FormGroup(undefined);
   }
 
   public handleSetMockServiceSubjectValue(): void {
     this.mockPatternService.updatedMockPatternVar = this.vm;
-    console.log('value of getMockPatternExample', this.mockPatternService.getMockPatternExample.getValue());
   }
 
   public handleSetMockPrimitiveValue(): void {
     this.mockPatternService.updateMockPrimitiveValue = false;
-    console.log('mock pattern service primitive value', this.mockPatternService.getMockPrimitiveValue);
   }
 
   public handleUpdateServiceClick(): void {
     this.mockPatternService.updateMockPrimitiveValue = true;
-    console.log('get after click set mock primitive value isTrue', this.mockPatternService.getMockPrimitiveValue);
   }
 }

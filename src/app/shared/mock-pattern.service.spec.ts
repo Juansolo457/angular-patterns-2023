@@ -15,30 +15,30 @@ describe('MockPatternService', () => {
 
   it('should get and set mockPatternExample using BehaviorSubject', () => {
     const mockValue: MockViewModel = {
-      name: 'John',
+      formGroup: undefined,
       guid: '123-456-8DDD',
       isActive: true,
+      name: 'John',
       ordinal: 12,
-      formGroup: undefined,
     };
 
     // Set the value using the setter
     service.updatedMockPatternVar = mockValue;
 
     // Get the value using the getter
-    const retrievedValue = service.getMockPatternExample.getValue();
+    const retrievedValue: MockViewModel = service.getMockPatternExample.getValue();
 
     expect(retrievedValue).toEqual(mockValue);
   });
 
   it('should get and set mockPrimitiveValue', () => {
-    const newValue = true;
+    const newValue: boolean = true;
 
     // Set the value using the setter
     service.updateMockPrimitiveValue = newValue;
 
     // Get the value using the getter
-    const retrievedValue = service.getMockPrimitiveValue;
+    const retrievedValue: boolean = service.getMockPrimitiveValue;
 
     expect(retrievedValue).toEqual(newValue);
   });
