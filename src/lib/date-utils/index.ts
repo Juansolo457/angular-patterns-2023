@@ -1,4 +1,4 @@
-import { TimeZone } from '../../app/models/timezone.model';
+import { TimeZone } from '../../app/shared/models/timezone.enum';
 
 export const convertTimeZoneToIanaFormat: Function = (timeZone: TimeZone): string => {
   switch (timeZone) {

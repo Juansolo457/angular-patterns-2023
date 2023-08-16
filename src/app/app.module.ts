@@ -6,10 +6,12 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ExampleComponent } from './pages/example-component/example.component';
 
+// TODO: Add / update app routing with lazy loading and use example component as '/'
 @NgModule({
   bootstrap: [AppComponent],
-  declarations: [AppComponent],
+  declarations: [AppComponent, ExampleComponent],
   imports: [BrowserModule, AppRoutingModule, MatButtonModule, MatToolbarModule, MatIconModule],
   providers: [],
 })

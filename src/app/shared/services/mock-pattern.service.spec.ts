@@ -1,5 +1,5 @@
 import { TestBed } from '@angular/core/testing';
-import { MockViewModel } from '../models/mock-models/mock-view-model';
+import { MockViewModel } from '../models/mock-view-model';
 import { MockPatternService } from './mock-pattern.service';
 
 describe('MockPatternService', () => {

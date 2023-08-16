@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subject } from 'rxjs';
-import { MockViewModel } from './models/mock-models/mock-view-model';
-import { MockPatternService } from './shared/mock-pattern.service';
+import { MockViewModel } from './shared/models/mock-view-model';
+import { MockPatternService } from './shared/services/mock-pattern.service';
 
 @Component({
   selector: 'app-root',
