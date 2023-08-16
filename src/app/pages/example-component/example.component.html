@@ -1,1 +1,69 @@
-<p>example works!</p>
+<h1>IASG - v0.1</h1>
+<mat-divider class="example-divider"></mat-divider>
+<form *ngIf="vm.formGroup" [formGroup]="vm?.formGroup">
+  <mat-form-field [formGroup]="vm?.formGroup">
+    <mat-label> Email Form </mat-label>
+    <input formControlName="exampleEmailFormControl" matInput />
+    <!--          <mat-error>Error Text Placeholder</mat-error>-->
+  </mat-form-field>
+  <!--        TODO: (late) add a proper mat-select / form control (KIP pattern)-->
+  <!--        <mat-form-field-->
+  <!--          class="form-select-field col dropdown"-->
+  <!--          hideRequiredMarker="true"-->
+  <!--          [appearance]="appearance"-->
+  <!--          [ngClass]="{ disabled: vm.formGroup.get('type')?.disabled }">-->
+  <!--          <mat-label data-qa="type-label" id="type">-->
+  <!--            {{ vm.typeLabel }}<span class="superscript__small">*</span>-->
+  <!--          </mat-label>-->
+  <!--          <mat-select formControlName="dropdown-example" (selectionChange)="setSelectedType($event.value)">-->
+  <!--            <mat-option-->
+  <!--              *ngFor="let type of vm.types; trackBy: trackTypes"-->
+  <!--              [attr.aria-selected]="type === this.vm.formGroup.get('type').value"-->
+  <!--              [value]="type">-->
+  <!--              {{ type }}-->
+  <!--            </mat-option>-->
+  <!--          </mat-select>-->
+  <!--        </mat-form-field>-->
+</form>
+<h1>
+  Is form group valid?<span matRipple [matRippleColor]="color">{{ vm?.showIsValidMessage$ | async }}</span>
+  <mat-divider class="example-divider"></mat-divider>
+</h1>
+
+<!--<div-->
+<!--  class="example-ripple-container mat-elevation-z4"-->
+<!--  matRipple-->
+<!--  [matRippleUnbounded]="unbounded"-->
+<!--  [matRippleRadius]="radius"-->
+<!--  [matRippleColor]="color">-->
+<!--  Click me-->
+<!--</div>-->
+
+<!-- TODO: implement top nav bar-->
+<!-- example app component here -->
+<!--<div class="three">-->
+<!--  <h1>Style Three</h1>-->
+<!--  <div>-->
+<!--    <nav class="navbar">-->
+<!--      <div class="navbar-container container">-->
+<!--        <input type="checkbox" name="" id="" />-->
+<!--        <div class="hamburger-lines">-->
+<!--          <span class="line line1"></span>-->
+<!--          <span class="line line2"></span>-->
+<!--          <span class="line line3"></span>-->
+<!--        </div>-->
+<!--        <ul class="menu-items">-->
+<!--          <li><a href="#">Home</a></li>-->
+<!--          <li><a href="#">About</a></li>-->
+<!--          <li><a href="#">Category</a></li>-->
+<!--          <li><a href="#">Menu</a></li>-->
+<!--          <li><a href="#">Testimonial</a></li>-->
+<!--          <li><a href="#">Contact</a></li>-->
+<!--        </ul>-->
+<!--        <h1 class="logo">Navbar</h1>-->
+<!--      </div>-->
+<!--    </nav>-->
+<!--  </div>-->
+<!--</div>-->
+
+<div></div>
