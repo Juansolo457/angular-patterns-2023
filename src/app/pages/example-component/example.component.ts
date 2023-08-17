@@ -3,6 +3,8 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { MatRipple, RippleRef } from '@angular/material/core';
 import { debounceTime, merge, of, Subject, takeUntil } from 'rxjs';
 import { ExampleComponentViewModel } from '../../shared/models/example-component.model';
+import { RandomUser } from '../../shared/models/random-user.model';
+import { RandomUserService } from '../../shared/services/random-user.service';
 import { CustomValidators } from '../../shared/validators/custom-validators';
 
 @Component({
@@ -17,7 +19,7 @@ export class ExampleComponent implements OnInit, OnDestroy {
   @ViewChild(MatRipple) private ripple: MatRipple;
   private unsubscribe$: Subject<void>;
 
-  public constructor() {
+  public constructor(private randomUserService: RandomUserService) {
     this.unsubscribe$ = new Subject<void>();
   }
 
@@ -34,6 +36,7 @@ export class ExampleComponent implements OnInit, OnDestroy {
     };
     this.createFormGroup();
     this.subscribeFormGroupChanges();
+    this.handleGetRandomUser();
   }
 
   public ngOnDestroy() {
@@ -76,5 +79,17 @@ export class ExampleComponent implements OnInit, OnDestroy {
     merge(this.vm.formGroup.get('exampleEmailFormControl').valueChanges)
       .pipe(debounceTime(750), takeUntil(this.unsubscribe$))
       .subscribe(this.handleFormGroupChanges.bind(this));
+  }
+
+  private handleGetRandomUser(): void {
+    // eslint-disable-next-line no-console
+    console.log(
+      'get rando',
+      this.randomUserService.getRandomUser().subscribe({
+        next: (usr: RandomUser): void => {
+          console.log('user log', usr); // eslint-disable-line no-console
+        },
+      }),
+    );
   }
 }

@@ -1,3 +1,4 @@
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
@@ -17,6 +18,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ExampleComponent } from './pages/example-component/example.component';
 import { BootstrapExampleComponent } from './pages/bootstrap-example/bootstrap-example.component';
+import { RandomUserService } from './shared/services/random-user.service';
 
 // TODO: Add / update app routing with lazy loading and use example component as '/'
 @NgModule({
@@ -38,7 +40,8 @@ import { BootstrapExampleComponent } from './pages/bootstrap-example/bootstrap-e
     FormsModule,
     MatCheckboxModule,
     NgbInputDatepicker,
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [RandomUserService],
 })
 export class AppModule {}
