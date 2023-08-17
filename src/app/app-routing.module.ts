@@ -12,6 +12,12 @@ const routes: Routes = [
     loadChildren: () => import('./pages/example-component/example.module').then((m) => m.ExamplesModule),
     path: 'examples',
   },
+  {
+    loadChildren: () =>
+      // eslint-disable-next-line @typescript-eslint/typedef
+      import('./pages/parent-child-example/parent-child.module').then((m) => m.ParentChildExampleModule),
+    path: 'parentchild',
+  },
 ];
 
 @NgModule({
