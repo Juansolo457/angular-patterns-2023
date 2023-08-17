@@ -17,8 +17,6 @@ export class ExampleComponent implements OnInit, OnDestroy {
   @ViewChild(MatRipple) private ripple: MatRipple;
   private unsubscribe$: Subject<void>;
 
-  /** Shows a centered and persistent ripple. */
-
   public constructor() {
     this.unsubscribe$ = new Subject<void>();
   }
