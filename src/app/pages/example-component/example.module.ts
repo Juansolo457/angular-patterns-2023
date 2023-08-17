@@ -1,5 +1,6 @@
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCheckboxModule } from '@angular/material/checkbox';
@@ -10,23 +11,18 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatListModule } from '@angular/material/list';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbInputDatepicker } from '@ng-bootstrap/ng-bootstrap';
+import { ExampleRoutingModule } from './example-routing.module';
+import { ExampleComponent } from './example.component';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { BootstrapExampleComponent } from './pages/bootstrap-example/bootstrap-example.component';
-import { RandomUserService } from './shared/services/random-user.service';
+/* NOTE: you have to watch the imports, don't bring in duplicates, you could get
+ * runtime and not compile time errors that could not be very clear why..*/
 
-// TODO: Add / update app routing with lazy loading and use example component as '/'
 @NgModule({
-  bootstrap: [AppComponent],
-  declarations: [AppComponent, BootstrapExampleComponent],
+  declarations: [ExampleComponent],
   imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    AppRoutingModule,
+    CommonModule,
+    ExampleRoutingModule,
     MatButtonModule,
     MatToolbarModule,
     MatIconModule,
@@ -41,6 +37,5 @@ import { RandomUserService } from './shared/services/random-user.service';
     NgbInputDatepicker,
     HttpClientModule,
   ],
-  providers: [RandomUserService],
 })
-export class AppModule {}
+export class ExamplesModule {}
