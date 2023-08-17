@@ -19,7 +19,6 @@ import { AppComponent } from './app.component';
 import { BootstrapExampleComponent } from './pages/bootstrap-example/bootstrap-example.component';
 import { RandomUserService } from './shared/services/random-user.service';
 
-// TODO: Add / update app routing with lazy loading and use example component as '/'
 @NgModule({
   bootstrap: [AppComponent],
   declarations: [AppComponent, BootstrapExampleComponent],
