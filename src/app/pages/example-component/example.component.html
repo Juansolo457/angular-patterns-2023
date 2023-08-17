@@ -6,29 +6,30 @@
     <input formControlName="exampleEmailFormControl" matInput />
     <!--          <mat-error>Error Text Placeholder</mat-error>-->
   </mat-form-field>
-  <!--        TODO: (late) add a proper mat-select / form control (KIP pattern)-->
-  <!--        <mat-form-field-->
-  <!--          class="form-select-field col dropdown"-->
-  <!--          hideRequiredMarker="true"-->
-  <!--          [appearance]="appearance"-->
-  <!--          [ngClass]="{ disabled: vm.formGroup.get('type')?.disabled }">-->
-  <!--          <mat-label data-qa="type-label" id="type">-->
-  <!--            {{ vm.typeLabel }}<span class="superscript__small">*</span>-->
-  <!--          </mat-label>-->
-  <!--          <mat-select formControlName="dropdown-example" (selectionChange)="setSelectedType($event.value)">-->
-  <!--            <mat-option-->
-  <!--              *ngFor="let type of vm.types; trackBy: trackTypes"-->
-  <!--              [attr.aria-selected]="type === this.vm.formGroup.get('type').value"-->
-  <!--              [value]="type">-->
-  <!--              {{ type }}-->
-  <!--            </mat-option>-->
-  <!--          </mat-select>-->
-  <!--        </mat-form-field>-->
 </form>
 <h1>
   Is form group valid?<span matRipple [matRippleColor]="color">{{ vm?.showIsValidMessage$ | async }}</span>
   <mat-divider class="example-divider"></mat-divider>
 </h1>
+
+<!--        TODO: (late) add a proper mat-select / form control (KIP pattern)-->
+<!--        <mat-form-field-->
+<!--          class="form-select-field col dropdown"-->
+<!--          hideRequiredMarker="true"-->
+<!--          [appearance]="appearance"-->
+<!--          [ngClass]="{ disabled: vm.formGroup.get('type')?.disabled }">-->
+<!--          <mat-label data-qa="type-label" id="type">-->
+<!--            {{ vm.typeLabel }}<span class="superscript__small">*</span>-->
+<!--          </mat-label>-->
+<!--          <mat-select formControlName="dropdown-example" (selectionChange)="setSelectedType($event.value)">-->
+<!--            <mat-option-->
+<!--              *ngFor="let type of vm.types; trackBy: trackTypes"-->
+<!--              [attr.aria-selected]="type === this.vm.formGroup.get('type').value"-->
+<!--              [value]="type">-->
+<!--              {{ type }}-->
+<!--            </mat-option>-->
+<!--          </mat-select>-->
+<!--        </mat-form-field>-->
 
 <!--<div-->
 <!--  class="example-ripple-container mat-elevation-z4"-->
@@ -65,5 +66,3 @@
 <!--    </nav>-->
 <!--  </div>-->
 <!--</div>-->
-
-<div></div>
