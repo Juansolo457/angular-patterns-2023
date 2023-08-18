@@ -1,2 +1,2 @@
 # animal-based-calculator
-angular based calorie calculator for eating an animal based diet
+angular web app with a calorie calculator for eating an animal based diet
