@@ -34,7 +34,7 @@ export class AppComponent implements OnDestroy, OnInit {
   }
 
   public createFormGroup(): void {
-    // TODO: Implement Form group pattern.
+    // Form group logic goes here.
     // this.vm.formGroup = new FormGroup(undefined);
   }
 
