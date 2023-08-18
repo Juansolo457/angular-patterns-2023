@@ -11,6 +11,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatListModule } from '@angular/material/list';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbInputDatepicker } from '@ng-bootstrap/ng-bootstrap';
 import { ExampleRoutingModule } from './example-routing.module';
 import { ExampleComponent } from './example.component';
@@ -22,6 +24,9 @@ import { ExampleComponent } from './example.component';
   declarations: [ExampleComponent],
   imports: [
     CommonModule,
+    BrowserModule,
+    BrowserAnimationsModule,
+    NoopAnimationsModule,
     ExampleRoutingModule,
     MatButtonModule,
     MatToolbarModule,

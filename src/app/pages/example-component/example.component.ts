@@ -14,7 +14,6 @@ import { CustomValidators } from '../../shared/validators/custom-validators';
 })
 export class ExampleComponent implements OnInit, OnDestroy {
   public vm: ExampleComponentViewModel;
-  public radius: number;
   public color: string = '#D3D3D3';
   @ViewChild(MatRipple) private ripple: MatRipple;
   private unsubscribe$: Subject<void>;
@@ -85,11 +84,14 @@ export class ExampleComponent implements OnInit, OnDestroy {
     // eslint-disable-next-line no-console
     console.log(
       'get rando',
-      this.randomUserService.getRandomUser().subscribe({
-        next: (usr: RandomUser): void => {
-          console.log('user log', usr); // eslint-disable-line no-console
-        },
-      }),
+      this.randomUserService
+        .getRandomUser()
+        .pipe(takeUntil(this.unsubscribe$))
+        .subscribe({
+          next: (usr: RandomUser): void => {
+            console.log('user log', usr); // eslint-disable-line no-console
+          },
+        }),
     );
   }
 }
