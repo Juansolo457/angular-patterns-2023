@@ -19,10 +19,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BootstrapExampleComponent } from './pages/bootstrap-example/bootstrap-example.component';
 import { RandomUserService } from './shared/services/random-user.service';
+import { ResultsComponent } from './pages/results/results.component';
 
 @NgModule({
   bootstrap: [AppComponent],
-  declarations: [AppComponent, BootstrapExampleComponent],
+  declarations: [AppComponent, BootstrapExampleComponent, ResultsComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
