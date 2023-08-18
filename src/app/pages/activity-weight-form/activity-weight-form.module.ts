@@ -1,10 +1,20 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 import { ActivityWeightFormRoutingModule } from './activity-weight-form-routing.module';
 import { ActivityWeightFormComponent } from './activity-weight-form.component';
 
 @NgModule({
   declarations: [ActivityWeightFormComponent],
-  imports: [CommonModule, ActivityWeightFormRoutingModule],
+  imports: [
+    CommonModule,
+    ActivityWeightFormRoutingModule,
+    FormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    ReactiveFormsModule,
+  ],
 })
 export class ActivityWeightFormModule {}

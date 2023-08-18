@@ -1,6 +1,16 @@
 <div class="text-white bg-[#001a1c]">
   Add Form UI here!
-  <div>box 1</div>
+  <div>
+    <form>
+      <div>
+        <mat-label> Goal Weight </mat-label>
+      </div>
+      <mat-form-field [formGroup]="vm?.formGroup" appearance="fill">
+        <input type="number" formControlName="bodyWeight" matInput />
+        <!--          <mat-error>Error Text Placeholder</mat-error>-->
+      </mat-form-field>
+    </form>
+  </div>
   <div>box 2</div>
-  <!--  TODO: add form controls and labels-->
+  <!--  TODO: add form controls and labels per style outline-->
 </div>

@@ -25,4 +25,17 @@ export class CustomValidators {
       return result ? null : JSON.parse('{ "email": { "value": true } }');
     };
   }
+
+  public static weightInPoundsValidator(): ValidatorFn {
+    const result: boolean = true;
+    return (control: AbstractControl): ValidationErrors | null => {
+      const value: number = control?.value;
+      if (isUndefined(value) || (value === 0 && value > 150)) {
+        return null;
+      }
+      // const result: boolean = emailRegex.test(value);
+      // console.log('is 150 or less!', value);
+      return result ? null : JSON.parse('{ "email": { "value": true } }');
+    };
+  }
 }
