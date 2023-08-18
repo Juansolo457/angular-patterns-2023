@@ -12,6 +12,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { RouterModule, RouterOutlet } from '@angular/router';
 import { NgbInputDatepicker } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -40,6 +41,8 @@ import { RandomUserService } from './shared/services/random-user.service';
     NgbInputDatepicker,
     HttpClientModule,
     NoopAnimationsModule,
+    RouterModule,
+    RouterOutlet,
   ],
   providers: [RandomUserService],
 })
