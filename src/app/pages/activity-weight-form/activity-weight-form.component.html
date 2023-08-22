@@ -3,14 +3,29 @@
   <div>
     <form>
       <div>
-        <mat-label> Goal Weight </mat-label>
+        <mat-label>{{ vm?.bodyWeightLabel }}</mat-label>
       </div>
       <mat-form-field [formGroup]="vm?.formGroup" appearance="fill">
         <input type="number" formControlName="bodyWeight" matInput />
         <!--        // TODO: Implement error handling w/ the form-->
         <!--          <mat-error>Error Text Placeholder</mat-error>-->
       </mat-form-field>
+      <mat-error *ngIf="vm?.formGroup.get('bodyWeight').hasError('invalid')">
+        {{ vm?.invalidWeightWarning }}
+      </mat-error>
+      <div>
+        <mat-label>{{ vm?.activityLabel }}</mat-label>
+      </div>
+      <mat-form-field [formGroup]="vm?.formGroup" appearance="fill">
+        <input type="number" formControlName="activityLevel" matInput />
+      </mat-form-field>
+      <mat-error *ngIf="vm?.formGroup.get('activityLevel').hasError('invalid')">
+        {{ vm?.invalidActivityLevelWarning }}
+      </mat-error>
     </form>
+  </div>
+  <div>
+    <button (click)="calculateCaloriesToConsume()" [disabled]="!vm?.formGroup.valid">Calculate</button>
   </div>
   <div>box 2</div>
   <!--  TODO: add form controls and labels per style outline-->
