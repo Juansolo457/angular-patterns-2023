@@ -7,8 +7,6 @@
       </div>
       <mat-form-field [formGroup]="vm?.formGroup" appearance="fill">
         <input type="number" formControlName="bodyWeight" matInput />
-        <!--        // TODO: Implement error handling w/ the form-->
-        <!--          <mat-error>Error Text Placeholder</mat-error>-->
       </mat-form-field>
       <mat-error *ngIf="vm?.formGroup.get('bodyWeight').hasError('invalid')">
         {{ vm?.invalidWeightWarning }}
@@ -30,3 +28,29 @@
   <div>box 2</div>
   <!--  TODO: add form controls and labels per style outline-->
 </div>
+
+<mat-table multiTemplateDataRows [dataSource]="vm?.dataSource">
+  <ng-container matColumnDef="range">
+    <mat-header-cell *matHeaderCellDef>
+      {{ vm.ActivityWeightColumnName.Range }}
+    </mat-header-cell>
+    <mat-cell *matCellDef="let element"> range cell test 123 </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="lowEnd">
+    <mat-header-cell *matHeaderCellDef>
+      {{ vm.ActivityWeightColumnName.LowEnd }}
+    </mat-header-cell>
+    <mat-cell *matCellDef="let element">{{ element.lowEndCarbPerGram }}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="highEnd">
+    <mat-header-cell *matHeaderCellDef>
+      {{ vm.ActivityWeightColumnName.HighEnd }}
+    </mat-header-cell>
+    <mat-cell *matCellDef="let element"> hi cell test 123 </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="vm.displayColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: vm.displayColumns; let element"></mat-row>
+</mat-table>
