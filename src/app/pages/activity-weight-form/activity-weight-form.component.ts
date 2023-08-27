@@ -42,6 +42,7 @@ export class ActivityWeightFormComponent implements OnInit, OnDestroy {
       submitButtonEnabled: false,
     };
     this.createFormGroup();
+    // TODO: NEXT - implement the range labels on the table (carbs, meat etc..)
     this.subscribeFormGroupChanges();
     this.subscribeResultsTableChanges();
   }

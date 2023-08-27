@@ -35,9 +35,9 @@ export class ActivityWeightDataSource implements DataSource<ActivityWeight> {
   }
 
   private subscribeActivityWeightData(): void {
-    // TODO: implement updating of results table here
+    // TODO: implement different rows for same col headers here.
     setTimeout(() => {
-      this.activityWeight$.next([updatedMockActivityWeight]);
+      this.activityWeight$.next([...this.activityWeight$.getValue(), updatedMockActivityWeight]);
     }, 7000); // next execution tick trick
   }
 }
