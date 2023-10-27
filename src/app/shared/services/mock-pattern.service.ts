@@ -15,7 +15,7 @@ export class MockPatternService implements OnDestroy {
   }
 
   public ngOnDestroy(): void {
-    this.unsubscribe$.next(undefined);
+    this.unsubscribe$.next();
     this.unsubscribe$.complete();
   }
 
